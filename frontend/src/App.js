@@ -10,6 +10,7 @@ import {
   BrowserRouter as Router,
   Routes,
   Navigate,
+  Redirect,
 } from "react-router-dom";
 
 const App = () => {
@@ -34,6 +35,8 @@ const App = () => {
           <Route exact path="/" component={Home} />
           <Route path="/SEPractice" component={SEPractice} />
           <Route path="/SubmitArticle" component={SubmitArticle} />
+          <Route exact path="/404" component={NotFoundPage} />
+          <Redirect to="/404" />
         </div>
       </div>
     </Router>
