@@ -19,16 +19,22 @@ const App = () => {
         <h1>Software Engineering Practice Evidence Repository (SEPER)</h1>
         <ul className="header">
           <li>
-            <a href="/pages/Home.js">Home</a>
+            <NavLink exact to="/">
+              Home
+            </NavLink>
           </li>
           <li>
-            <a href="/SEPractice">Select the Practice</a>
+            <NavLink to="/SEPractice">Select the Practice</NavLink>
           </li>
           <li>
-            <a href="/SubmitArticle">Submit an Article</a>
+            <NavLink to="/SubmitArticle">Submit an Article</NavLink>
           </li>
         </ul>
-        <div className="content"></div>
+        <div className="content">
+          <Route exact path="/" component={Home} />
+          <Route path="/SEPractice" component={SEPractice} />
+          <Route path="/SubmitArticle" component={SubmitArticle} />
+        </div>
       </div>
     </Router>
   );
